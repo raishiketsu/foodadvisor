@@ -32,8 +32,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          file: /apt/Dockerfile
           context: .
+          file: ./apt/Dockerfile
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
@@ -59,8 +59,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          file: /client/Dockerfile
           context: .
+          file: ./client/Dockerfile
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
